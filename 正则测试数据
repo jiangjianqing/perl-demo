@@ -39,6 +39,7 @@ I'm singing while you're dancing.reading a book tnk
 7、解析http协议、主机名以及可能出现的端口
 http://www.baidu.com:80/test1
 http://www.baidu.com/test1
+http://localhost
 
 8、将1.5 1.6替换为5.0 6.0
 Before Java    1.5 was java 1.4.2.After java 1.5 is java 1.6.
@@ -63,3 +64,5 @@ from 36C to 40.1C
 
 25:77
 15:0
+
+12
