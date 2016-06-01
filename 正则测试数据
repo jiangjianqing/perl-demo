@@ -1,0 +1,65 @@
+1、ip地址
+127.0.0.1
+255.255.255.0
+12.12.12.12
+12.12.12.123
+12.12.12.254
+
+2、重复的词
+so so
+
+3、查找ing结尾的单词，查找re开头的单词 查找n前面不是i后面不是g的单词
+I'm singing while you're dancing.reading a book tnk
+
+4、以空白符号间隔的数字（注意1）
+1 3 5 678 9
+
+5、查找标签名称和里面的内容
+<img>abcdef</img>
+
+6、解析权限字符串
+[user:create]
+[*]
+[*:*]
+[user:*]
+[*:create]
+[device:ipu:create]
+
+[*:]
+[user:]
+[:create]
+[device:ipu:create*]
+[device:ip*u:create]
+[1:2][3:4]
+
+(?<=\[)
+(((\w+|\*):)+(\w+|\*))
+(?=\])
+
+7、解析http协议、主机名以及可能出现的端口
+http://www.baidu.com:80/test1
+http://www.baidu.com/test1
+
+8、将1.5 1.6替换为5.0 6.0
+Before Java    1.5 was java 1.4.2.After java 1.5 is java 1.6.
+
+9、解析其中的温度数值
+from 36.3C to 40.1C
+from 36C to 40.1C
+
+10、日期验证
+2016-05-31
+2016.05.31
+2016/05/31
+
+2016-05/31
+2016.05-31
+
+11、验证时间
+15:03
+23:59
+9:17 am
+12:30 pm
+
+25:77
+15:0
