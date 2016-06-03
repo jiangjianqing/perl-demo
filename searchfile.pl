@@ -2,9 +2,24 @@
 use strict;
 #use DBI;
 #use Encode;
+#
+#my $str="中国";
+#Encode::_utf8_on($str);
+#$len=length($str);#获取字符串长度=2
+#Encode::_utf8_off($str);
+#$len=length($str);#获取字符串长度=4或6,根据编辑器的编码而定
+#
+#
+#my $a = "china----中国";
+#my $b = "china----中国";
+#my $stra = decode("gb2312",$a);
+#$stra =~ s/\W+//g;
+#print encode("gb2312",$stra),"\n"; 
+#输出：
+#china中国
+#
 #$re = Encode::decode('GB2312', '中国');
 #$in = Encode::decode('GB2312', $ARGV[0]);
-
 #if( $in =~/.*$re.*/ ) {
 #   print $ARGV[0], "\n";
 #}
