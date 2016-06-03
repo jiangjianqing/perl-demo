@@ -19,6 +19,18 @@ require "./perl_lib/regex_lib.pl";
 #$text =<>;	#读入命令行中指定的第一个文件名
 #\e表示ASCII的转义字符，\e[7m用于标注高亮的开始，\e[m用于标注高亮的结束
 #s{}{\e[7m$1\e[m$2\e[7m$3\e[m}gix
+
+#列表变量出现在标量环境中,就传回列表的长度
+my $argCount=@ARGV;
+print @ARGV;
+
+print "\n$argCount\n";
+#print "$ARGV[1]\n";
+my $regex_test;
+if ($argCount>=2){
+	$regex_test=$ARGV[1];
+	print "$regex_test\n";
+}
 my $lineNumber=0;
 my $line;
 while($line=<>){
@@ -28,10 +40,12 @@ while($line=<>){
 	#	last; #停止while循环内的处理，跳出循环
 	#}
 	
-	$line =~ s/\b(\d{3,})\b/\e[7m$1\e[m/gix;
+	#$line =~ s/\b(\d{3,})\b/\e[7m$1\e[m/gix;
+	if(defined $regex_test){
+		$line =~ s/$regex_test/\e[7m$1\e[m/gix;
 
-	next unless ($line =~ m/\e/);	#去掉所有未标记的行
-		
+		next unless ($line =~ m/\e/);	#去掉所有未标记的行
+	}
 	#####打印结果区####
 	#print "$ARGV($lineNumber):$line";
 	printf "%s(%.4d)",$ARGV,$lineNumber;
