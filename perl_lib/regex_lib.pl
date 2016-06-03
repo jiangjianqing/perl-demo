@@ -13,6 +13,7 @@ $EmailRegex = qr/
 	)
 	\b/ix;
 $EmptyLineRegex=qr/^\s*$/x;
+$chineseCharacter=qr/(([\x80-\xFF][\x80-\xFF])+)/ix;
 
 #test  samples	
 #$text="cz_jjq\@163.com";

@@ -1,5 +1,13 @@
 #!/usr/bin/perl -w 
 use strict;
+#use DBI;
+#use Encode;
+#$re = Encode::decode('GB2312', '中国');
+#$in = Encode::decode('GB2312', $ARGV[0]);
+
+#if( $in =~/.*$re.*/ ) {
+#   print $ARGV[0], "\n";
+#}
 
 #引入外部文件中的正则表达式定义
 require "./perl_lib/regex_lib.pl";
