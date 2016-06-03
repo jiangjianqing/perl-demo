@@ -1,3 +1,5 @@
+#!/usr/bin/perl -w 
+
 print "Enter a temperature(e.g.,32F,100C):\n";
 $input=<STDIN>;	#接收用户输入的一行文本
 chomp($input);	#去掉$input末尾的换行
