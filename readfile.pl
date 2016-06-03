@@ -16,12 +16,20 @@ require "./perl_lib/regex_lib.pl";
 #$text =<>;	#读入命令行中指定的第一个文件名
 #\e表示ASCII的转义字符，\e[7m用于标注高亮的开始，\e[m用于标注高亮的结束
 #s{}{\e[7m$1\e[m$2\e[7m$3\e[m}gix
+$lineNumber=0;
 while($line=<>){
+	$lineNumber++;	#设定行编号
+
 	#if($line =~ m/^\s*$/){ #匹配空行
 	#	last; #停止while循环内的处理，跳出循环
 	#}
+	
+	$line =~ s/\b(\d{3,})\b/\e[7m$1\e[m/gix;
 
-	print $line;
+	next unless ($line =~ m/\e/);	#去掉所有未标记的行
+		
+	#####打印结果区####
+	print "$ARGV($lineNumber):$line";
 	if(not defined($line)){	#如果##变量没定义，则退出程序
 		die "couldn't glean the required information!";
 	}
