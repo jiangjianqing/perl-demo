@@ -65,7 +65,7 @@ while($line=<>){
 	
 	#$line =~ s/\b(\d{3,})\b/\e[7m$1\e[m/gix;
 	if(defined $regex_test){
-		$line =~ s/$regex_test/\e[7m$1\e[m/gix;
+		$line =~ s/($regex_test)/\e[7m$1\e[m/gix;
 
 		next unless ($line =~ m/\e/);	#去掉所有未标记的行
 	}
