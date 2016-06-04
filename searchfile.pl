@@ -51,7 +51,7 @@ print "\n$argCount\n";
 #print "$ARGV[1]\n";
 my $regex_test;
 if ($argCount>=2){
-	$regex_test=$ARGV[1];
+	$regex_test=$ARGV[0];	#获取第一个参数
 	print "$regex_test\n";
 }
 my $lineNumber=0;
