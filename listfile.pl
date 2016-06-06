@@ -9,11 +9,11 @@ my @list = grep {/$Ext$/ && -f "$Dir/$_" } readdir(DH) ;
 closedir(DH) ;
 chdir($Dir) or die "Can't cd dir: $!\n" ;
 foreach my $file (@list){
-	open(FH, "$file") or die "Can't open: $!\n" ;
 	print "$file:\n" ;
-	while(<FH>){
-		print ;
-	}
-	print "\n";
-	close(FH) ;
+	#open(FH, "$file") or die "Can't open: $!\n" ;
+	#while(<FH>){
+	#	print ;
+	#}
+	#print "\n";
+	#close(FH) ;
 }
