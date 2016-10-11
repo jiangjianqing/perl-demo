@@ -29,7 +29,14 @@ sub processJsonFile{
 
 		print $decoded_json->{"data"};
 
+		foreach my $key (keys %{$decoded_json}){
+			print "$key\n"
+		}
+
+		print %$decoded_json{"name"}."\testeset";
+		#print %{$decoded_json}{"name"}."\testeset";
+
 		#print $line;
 	}
 }
-processJsonFile("./uicomponent/component1/caption.json");
+processJsonFile("./uicomponent/component1/info.json");
